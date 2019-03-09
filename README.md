@@ -6,3 +6,5 @@ Django has you covered, from authentication to session management, it will save 
 CRUD application - from rest_framework import viewsets
 We use Django to create a rest framework
 djangorestframework
+
+boot-strap is a popular css framework, react repacakged that for ease in react-bootstrap
