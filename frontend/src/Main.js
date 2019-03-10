@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import {Navbar, Nav, Form, FormControl, Button}  from "react-bootstrap";
 import {
   Route,
-  NavLink,
   HashRouter
 } from "react-router-dom";
 
 import Home from "./Home";
-import App from "./App";
+import AddPrices from "./AddPrices";
 import Contact from "./Contact";
 import NavigationBar from "./NavigationBar";
 
@@ -17,9 +15,9 @@ class Main extends Component {
         <HashRouter>
         <div>
             <NavigationBar />
-            <div className="content">
+            <div>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/app" component={App}/>
+                <Route exact path="/AddPrices" component={AddPrices}/>
                 <Route exact path="/contact" component={Contact}/>
             </div>
         </div>

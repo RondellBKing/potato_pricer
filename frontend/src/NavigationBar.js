@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-import {Navbar, Nav, Form, FormControl, Button}  from "react-bootstrap";
+import {Navbar, Nav}  from "react-bootstrap";
 import {
-  Route,
   NavLink,
   HashRouter
 } from "react-router-dom";
-
-import Home from "./Home";
-import App from "./App";
-import Contact from "./Contact";
 
 class NavigationBar extends Component {
   render() {
@@ -21,19 +16,15 @@ class NavigationBar extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto" variant="pills" defaultActiveKey="/">
                         <Nav.Item>
-                            <Nav.Link><NavLink to="/app"> Pricer </NavLink> </Nav.Link>
+                            <Nav.Link><NavLink to="/AddPrices"> Add Pricing </NavLink> </Nav.Link>
                          </Nav.Item>
                         <Nav.Item>
                             <Nav.Link><NavLink to="/contact"> Contact< /NavLink> </Nav.Link>
                          </Nav.Item>
                     </Nav>
                     <Navbar.Text>
-                        Signed in as: <a href="#login">Rondell</a>
+                        Signed in as: <a href="#login">Rondell King</a>
                     </Navbar.Text>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-primary">Search</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </div>
