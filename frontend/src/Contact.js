@@ -4,7 +4,7 @@ class Contact extends Component {
   render() {
     return (
       <div>
-          <Card bg="secondary" text="white" style={{ width: '18rem' }}>
+          <Card>
           <Card.Body>
             <Card.Title>Questions?</Card.Title>
             <Card.Text>

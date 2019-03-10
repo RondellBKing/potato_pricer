@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
-import './index.css';
 import Main from './Main';
 import * as serviceWorker from './serviceWorker';
 //document.body.style = 'background: black;';

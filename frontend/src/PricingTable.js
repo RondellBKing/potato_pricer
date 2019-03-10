@@ -57,6 +57,7 @@ class PricingTable extends Component {
         cellEdit={cellEditProp}
         options={options}
         search = {true}
+        variant = "dark"
         tableStyle={ { border: '#0000FF 2.5px solid' } }
         containerStyle={ { border: 'black 2.5px solid' } }
         bodyStyle={ { border: 'green 1px solid' } }

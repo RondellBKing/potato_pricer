@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Card} from "react-bootstrap";
 import {
   Route,
   HashRouter
@@ -7,19 +8,28 @@ import {
 import Home from "./Home";
 import AddPrices from "./AddPrices";
 import Contact from "./Contact";
+import Potatoes from "./Potatoes";
+import Clients from "./Clients";
+import Login from "./Login";
 import NavigationBar from "./NavigationBar";
 
 class Main extends Component {
   render() {
+
+    var letterStyle = {
+      fontSize: 14,
+    };
+
     return (
         <HashRouter>
-        <div>
+        <div style={letterStyle}>
             <NavigationBar />
-            <div>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/AddPrices" component={AddPrices}/>
+                <Route exact path="/clients" component={Clients}/>
                 <Route exact path="/contact" component={Contact}/>
-            </div>
+                <Route exact path="/potatoes" component={Potatoes}/>
+                <Route exact path="/login" component={Login}/>
         </div>
         </HashRouter>
         )

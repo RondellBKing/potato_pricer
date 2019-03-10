@@ -7,4 +7,13 @@ CRUD application - from rest_framework import viewsets
 We use Django to create a rest framework
 djangorestframework
 
-boot-strap is a popular css framework, react repacakged that for ease in react-bootstrap
+npm packages:
+bootstrap
+reactstrap
+
+pip install coverage - Testing
+coverage run --source='.' manage.py test
+coverage html
+
+Axios was used to fetch data from the server. Data is transmitted in a json format.
+Tree hierarchy - React
