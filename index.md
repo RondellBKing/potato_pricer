@@ -3,28 +3,6 @@
 ### Rondell King
 
 Background 
-You work at a magic potato trading company. The company earns fees by storing potatoes for clients as well as finding buyers and sellers of potatoes on behalf of clients. The storage fees earned by the company are based off the total market value of the potatoes stored by the clients. These potatoes are magic- they do not spoil while in storage, they can be shrunk so they take up very little space, and the delivery of the potatoes does not incur any cost. Potatoes must be kept separate from each other and therefore the cost to store different potato types may differ. Storage rates will be determined by traders and based off of numerous factors.  
-You work on the data science team and your role is to work with data to create reports, models, and make the business smarter and more efficient
-Two parts 
-Analyse the given sets of data and answer the questions below. Help the management team understand what is happening in the potato market and what client activity looks like. 
-Create a web tool that helps capture and save potato prices seen in the market 
- 
-Part 1
-Background
-You are given the Data_Files excel sheet which contains information about potatoes, the company's clients, and a snapshot of client potato positions for a period of time. A quantity of Null represents no position. Management has some questions regarding these data and would like to know your interpretations. You will present your findings at the quarterly management meeting.
-
-Questions 
-* Which clients have the largest potato stockpile based on market value? 
-* Which clients are the most active?
-* Which potatoes are most activity traded?
-* What client activity trends do you see?
-* What potato price trends do you see?
-* Are there any factors that can help predict potato prices? 
-* Are there any factors that can help predict client activity? 
-* Summarize what has happened during this period
-
-# First Step is to load the excel sheets using Pandas. 
-Examine the data and check for missing values in the tables.
 
 
 
@@ -763,11 +741,8 @@ if __name__ == '__main__':
 </html>
 
 ```
-![png](Web_landing_page.png)
+![png](Potato Pricing.png.png)
 
-
-[a link][result.html](https://github.com/RondellBKing/ms_case/blob/master/templates/result.html)
-![png](Result_page.png)
 
 
 
