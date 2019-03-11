@@ -1,16 +1,52 @@
 import React, {Component } from "react";
-import {Card, CardGroup} from "react-bootstrap";
+import {Card, CardGroup, Dropdown} from "react-bootstrap";
+import axios from 'axios';
+
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
+
+// Bloomberg Api
+const API = 'https://newsapi.org/v2/top-headlines?' +
+          'country=us&' +
+          'apiKey=366826fe46a044e6ac9ad2124d36f4eb';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        news: [],
+        isLoading: false,
+        error: null,
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ isLoading: true });
+
+    axios.get(API)
+      .then(result => this.setState({
+        news: result.data.articles,
+        isLoading: false,
+      }))
+      .catch(error => this.setState({
+        error,
+        isLoading: false
+      }));
+  }
+
   render() {
+  const { news, isLoading, error } = this.state;
     return (
       <div>
 <CardGroup>
   <Card>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Bloomberg Feed</Card.Title>
       <Card.Text>
-        Functions that can be used go in this card in a list
+        In this card, we have the newsapi, to get
+        Live Data fro Bloomberg.
+        This functionality is under construction
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -19,10 +55,10 @@ class Home extends Component {
   </Card>
   <Card>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Pricing Updates</Card.Title>
       <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+         In this page we can put Pricing updates received
+         in real time.
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -31,11 +67,9 @@ class Home extends Component {
   </Card>
   <Card>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Client Updates</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+        We can place Client Updates in this pane.
       </Card.Text>
     </Card.Body>
     <Card.Footer>

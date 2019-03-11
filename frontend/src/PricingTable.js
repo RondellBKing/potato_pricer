@@ -15,7 +15,6 @@ const selectRow = {
 
 const cellEditProp = {
   mode: 'dbclick', //Double click to edit cell
-  blurToSave: true
 };
 
 // Formatting functions
