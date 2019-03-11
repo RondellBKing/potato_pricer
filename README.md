@@ -17,3 +17,6 @@ coverage html
 
 Axios was used to fetch data from the server. Data is transmitted in a json format.
 Tree hierarchy - React
+
+
+add "proxy": "http://localhost:8000", to package.json, to allow tunneling to our local django server

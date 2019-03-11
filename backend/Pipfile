@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 djangorestframework = "*"
 django-cors-headers = "*"
+django-import-export = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"

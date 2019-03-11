@@ -48,11 +48,11 @@ const options = {
 };
 
 
-class PricingTable extends Component {
+class ClientTable extends Component {
   render() {
     return (
       <div>
-        <BootstrapTable insertRow deleteRow exportCSV data={this.props.data}
+        <BootstrapTable exportCSV data={this.props.data}
         selectRow={selectRow}
         cellEdit={cellEditProp}
         options={options}
@@ -63,17 +63,14 @@ class PricingTable extends Component {
         containerStyle={ { border: 'black 2.5px solid' } }
         bodyStyle={ { border: 'green 1px solid' } }
         >
-          <TableHeaderColumn isKey dataField='date' dataSort> Date </TableHeaderColumn>
-          <TableHeaderColumn dataField='client_id' dataSort> Cient ID </TableHeaderColumn>
-          <TableHeaderColumn dataField='prdct_id' dataSort> Product id </TableHeaderColumn>
-          <TableHeaderColumn dataField='price' dataFormat={ formatFloat } filterValue={filterType} dataSort>
-            Price
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField='quantity' dataSort>Quantity</TableHeaderColumn>
-          <TableHeaderColumn dataField='validated' dataSort>Validated</TableHeaderColumn>
+          <TableHeaderColumn isKey dataField='client_id' dataSort> Cient ID </TableHeaderColumn>
+          <TableHeaderColumn dataField='first_name' dataSort> First Name </TableHeaderColumn>
+          <TableHeaderColumn dataField='last_name' dataSort> Last Name </TableHeaderColumn>
+          <TableHeaderColumn dataField='type' dataSort>Client Type</TableHeaderColumn>
+          <TableHeaderColumn dataField='location' dataSort>Location</TableHeaderColumn>
         </BootstrapTable>
       </div>
     );
   }
 }
-export default PricingTable;
+export default ClientTable;

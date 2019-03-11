@@ -1,58 +1,57 @@
 import React, { Component } from "react";
-import PricingTable from "./PricingTable";
+import axios from 'axios';
+import ProductTable from "./ProductTable";
 
-    // Dummy Data
-    const dummy_data = [
-      {
-        date: new Date(),
-        client_id: 38,
-        prdct_id: 123,
-        price : 10.01,
-        quantity: 50,
-        validated: true
-      },
-      {
-        date: new Date(),
-        client_id: 98,
-        prdct_id: 74,
-        price : 87.02,
-        quantity: 7,
-        validated: false
-      },
-      {
-        date: new Date(),
-        client_id: 38,
-        prdct_id: 123,
-        price : 12.01,
-        quantity: 5,
-        validated: true
-      },
-      {
-        date: new Date(),
-        client_id: 55,
-        prdct_id: 67,
-        price : 1000.01,
-        quantity: 100,
-        validated: false
-      }
-    ];
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
+const API = '/api/product/';
+//const DEFAULT_QUERY = 'redux';
 
 class Potatoes extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.state = {
-        modal : false,
-        viewCompleted: false,
-        positions: dummy_data,
+        Potatoes: [],
+        isLoading: false,
+        error: null,
     };
   }
 
+  componentDidMount() {
+    this.setState({ isLoading: true });
+
+    axios.get(API)
+      .then(result => this.setState({
+        Potatoes: result.data,
+        isLoading: false,
+      }))
+      .catch(error => this.setState({
+        error,
+        isLoading: false
+      }));
+  }
+
   render() {
+      const { Potatoes, isLoading, error } = this.state;
+      console.log(Potatoes)
+      console.log(error)
+      if (error) {
+        return (<p>{error.message}</p>);
+      }
+
+      if (isLoading) {
+        return (
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        );
+      }
     return (
     <div>
-      <PricingTable data = {this.state.positions} />
-      Confirm Prices Should be submit button
+      <ProductTable  data = {Potatoes} />
     </div>
     );
   }
